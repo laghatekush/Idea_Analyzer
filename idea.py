@@ -24,8 +24,19 @@ structured_model = model.with_structured_output(Idea, method="function_calling")
 
 st.set_page_config(page_title="Startup Idea Analyzer", page_icon="🚀")
 st.title("🚀 Startup Idea Analyzer")
-st.write("Paste your startup idea below and get structured analysis.")
+st.write("""
+ Welcome to the AI-Powered Startup Idea Analyzer
 
+Paste your startup or product idea below and receive a detailed, AI-generated analysis including:
+
+- A concise one-line summary  
+- Five pros explaining why your idea could succeed  
+- Five cons highlighting potential challenges  
+- Top 3 competitors in the market  
+- An estimated success probability percentage  
+
+Leverage the power of AI to validate your ideas, understand the competition, and get fast, structured feedback to help you innovate smarter!
+""")
 idea_input = st.text_area("🧠 Enter your startup idea here", height=250)
 
 if st.button("Analyze Idea"):
@@ -55,3 +66,4 @@ if st.button("Analyze Idea"):
 
             except Exception as e:
                 st.error(f"Something went wrong: {str(e)}")
+
